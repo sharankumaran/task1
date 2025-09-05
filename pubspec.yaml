@@ -39,6 +39,7 @@ dependencies:
   form_builder: ^1.0.1
   flutter_form_builder: ^10.0.1
   form_builder_validators: ^11.1.0
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
@@ -63,8 +64,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

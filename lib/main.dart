@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:task1/bloc/auth_bloc.dart';
 import 'package:task1/pages/home_page.dart';
 import 'package:task1/pages/login_page.dart';
+import 'package:task1/pages/onboarding_page.dart';
 import 'package:task1/pages/register_page.dart';
 
 void main() {
@@ -13,8 +14,8 @@ void main() {
 final GoRouter _router = GoRouter(
   initialLocation: "/",
   routes: [
-    GoRoute(path: "/", builder: (context, state) => LoginPage()),
-
+    GoRoute(path: "/", builder: (context, state) => OnboardingPage()),
+    GoRoute(path: "/login", builder: (context, state) => LoginPage()),
     GoRoute(path: "/register", builder: (context, state) => RegisterPage()),
     GoRoute(path: "/home", builder: (context, state) => HomePage()),
   ],
