@@ -5,6 +5,7 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:task1/bloc/auth_bloc.dart';
+import 'package:task1/pages/colors.dart';
 import 'package:task1/pages/curved_edges.dart';
 import 'package:task1/pages/header_design.dart';
 
@@ -15,6 +16,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isdark = Theme.of(context).brightness == Brightness.dark;
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: BlocConsumer<AuthBloc, AuthState>(
@@ -43,18 +45,19 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Text(
                       'Login',
-                      style: TextStyle(
-                        fontSize: 30,
+                      style: Theme.of(
+                        context,
+                      ).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 33, 131, 38),
+                        color: Theme.of(context).primaryColor,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                     SizedBox(height: 7),
                     Text(
                       'Your journey is finally here',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        color: Colors.blueGrey.shade200,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context).hintColor,
                       ),
                     ),
                     SizedBox(height: 10),
@@ -81,7 +84,7 @@ class LoginPage extends StatelessWidget {
                                   decoration: InputDecoration(
                                     hintText: 'Username or email',
                                     filled: true,
-                                    fillColor: Color(0xFFE0EAE4),
+                                    fillColor: isdark ? kDarkCard : kLightcard,
                                     contentPadding: EdgeInsets.symmetric(
                                       vertical: 14,
                                       horizontal: 16,
@@ -127,7 +130,7 @@ class LoginPage extends StatelessWidget {
                                     suffixIcon: Icon(Iconsax.eye_slash),
                                     hintText: 'Enter your password',
                                     filled: true,
-                                    fillColor: Color(0xFFE0EAE4),
+                                    fillColor: isdark ? kDarkCard : kLightcard,
                                     contentPadding: EdgeInsets.symmetric(
                                       vertical: 14,
                                       horizontal: 16,
@@ -195,7 +198,11 @@ class LoginPage extends StatelessWidget {
                             children: [
                               Text(
                                 'Dont have account?',
-                                style: TextStyle(color: Colors.black26),
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.bodyMedium?.copyWith(
+                                  color: Theme.of(context).hintColor,
+                                ),
                               ),
 
                               TextButton(

@@ -5,6 +5,7 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:task1/bloc/auth_bloc.dart';
+import 'package:task1/pages/colors.dart';
 import 'package:task1/pages/curved_edges.dart';
 import 'package:task1/pages/header_design.dart';
 import 'package:task1/pages/terms_and_conditions.dart';
@@ -16,6 +17,7 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isdark = Theme.of(context).brightness == Brightness.dark;
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: BlocConsumer<AuthBloc, AuthState>(
@@ -48,16 +50,20 @@ class RegisterPage extends StatelessWidget {
                     children: [
                       Text(
                         'Create Your Account',
-                        style: TextStyle(
+                        style: Theme.of(
+                          context,
+                        ).textTheme.headlineMedium?.copyWith(
                           fontWeight: FontWeight.bold,
-                          color: const Color.fromARGB(255, 33, 131, 38),
-                          fontSize: 30,
+                          color: Theme.of(context).primaryColor,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 2),
                       Text(
                         'create your account to start your journey',
-                        style: TextStyle(color: Colors.blueGrey.shade200),
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).hintColor,
+                        ),
                       ),
                       SizedBox(height: 5),
                       Padding(
@@ -74,9 +80,10 @@ class RegisterPage extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'Full Name',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black87,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.bodyMedium?.copyWith(
+                                    color: Theme.of(context).hintColor,
                                   ),
                                 ),
                               ),
@@ -97,7 +104,7 @@ class RegisterPage extends StatelessWidget {
                                 decoration: InputDecoration(
                                   hintText: 'Enter your full name',
                                   filled: true,
-                                  fillColor: Color(0xFFE0EAE4),
+                                  fillColor: isdark ? kDarkCard : kLightcard,
                                   contentPadding: EdgeInsets.symmetric(
                                     vertical: 14,
                                     horizontal: 16,
@@ -117,9 +124,10 @@ class RegisterPage extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'Email',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black87,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.bodyMedium?.copyWith(
+                                    color: Theme.of(context).hintColor,
                                   ),
                                 ),
                               ),
@@ -140,7 +148,7 @@ class RegisterPage extends StatelessWidget {
                                 decoration: InputDecoration(
                                   hintText: 'Enter your email address',
                                   filled: true,
-                                  fillColor: Color(0xFFE0EAE4),
+                                  fillColor: isdark ? kDarkCard : kLightcard,
                                   contentPadding: EdgeInsets.symmetric(
                                     vertical: 14,
                                     horizontal: 16,
@@ -160,9 +168,10 @@ class RegisterPage extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'Password',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black87,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.bodyMedium?.copyWith(
+                                    color: Theme.of(context).hintColor,
                                   ),
                                 ),
                               ),
@@ -198,7 +207,7 @@ class RegisterPage extends StatelessWidget {
                                 decoration: InputDecoration(
                                   hintText: 'Enter your password',
                                   filled: true,
-                                  fillColor: Color(0xFFE0EAE4),
+                                  fillColor: isdark ? kDarkCard : kLightcard,
                                   suffixIcon: Icon(Iconsax.eye_slash),
                                   contentPadding: EdgeInsets.symmetric(
                                     vertical: 14,

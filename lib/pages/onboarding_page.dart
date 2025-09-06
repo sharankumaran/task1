@@ -22,20 +22,17 @@ class OnboardingPage extends StatelessWidget {
                 Center(
                   child: Text(
                     'Study.do',
-                    style: TextStyle(
-                      fontSize: 60,
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Theme.of(context).primaryColorLight,
                     ),
                   ),
                 ),
                 Text(
                   'Upgrade your skills and be knowledgeable by watching videos anytime,anywhere and any platform with study.do',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.grey.shade200,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w300,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).primaryColorDark,
                   ),
                 ),
                 SizedBox(height: 25),
@@ -66,22 +63,20 @@ class OnboardingPage extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: Theme.of(context).primaryColor,
+                      side: BorderSide(color: Theme.of(context).primaryColor),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
                       ),
-                      padding: EdgeInsets.all(10),
-                      backgroundColor: Colors.white70,
                     ),
                     onPressed: () {
                       context.go("/register");
                     },
                     child: Text(
                       'Create a new Account',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).hintColor,
                       ),
                     ),
                   ),

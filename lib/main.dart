@@ -6,6 +6,7 @@ import 'package:task1/pages/home_page.dart';
 import 'package:task1/pages/login_page.dart';
 import 'package:task1/pages/onboarding_page.dart';
 import 'package:task1/pages/register_page.dart';
+import 'package:task1/pages/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerConfig: _router,
+        theme: lightTheme,
+        darkTheme: darktheme,
+        themeMode: ThemeMode.system,
       ),
     );
   }

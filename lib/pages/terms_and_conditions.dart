@@ -31,20 +31,12 @@ class terms_and_conditions extends StatelessWidget {
 
                 TextSpan(
                   text: '${'Terms & Conditions '}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 13,
-                    color: Color.fromARGB(255, 4, 113, 48),
-                  ),
+                  style: TextStyle(color: Theme.of(context).primaryColor),
                 ),
                 TextSpan(text: '${'and '}', style: TextStyle(fontSize: 9)),
                 TextSpan(
                   text: '${'Privay Policy'}',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 13,
-                    color: Color.fromARGB(255, 4, 113, 48),
-                  ),
+                  style: TextStyle(color: Theme.of(context).primaryColor),
                 ),
               ],
             ),
